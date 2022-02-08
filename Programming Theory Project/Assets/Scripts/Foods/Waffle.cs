@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Waffle : MonoBehaviour
+public class Waffle : Food
 {
-    // Start is called before the first frame update
-    void Start()
+    public int foodID = 3;
+    string name1 = "waffle";
+    string name2 = "Waffle";
+
+    private void OnMouseDown()
     {
-        
+        chosenFoodID = foodID;
+        PanelManager();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetFood()
     {
-        
+        lowercaseName = name1;
+        uppercaseName = name2;
+        ChangeCamera();
     }
+
 }

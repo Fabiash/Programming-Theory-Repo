@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int lastSelectedFoodID;
+    public int currentFoodID;
+    public int chosenFoodID;
+    public string uppercaseName;
+    public string lowercaseName;
+    public GameObject gameManager;
+    public GameObject[] panel;
+    private GameManager gameManagerScript;
+    public GameObject mainCamera;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    public void PanelManager()
+    {
+        lastSelectedFoodID = currentFoodID;
+        currentFoodID = chosenFoodID;
+
+        if (lastSelectedFoodID != 0)
+        {
+            panel[lastSelectedFoodID - 1].SetActive(false);
+        }
+        Debug.Log(currentFoodID);
+        panel[chosenFoodID - 1].SetActive(true);
     }
 }

@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Steak : MonoBehaviour
+public class Steak : Food
 {
-    // Start is called before the first frame update
-    void Start()
+    public int foodID = 4;
+    string name1 = "steak";
+    string name2 = "Steak";
+
+    private void OnMouseDown()
     {
-        
+        chosenFoodID = foodID;
+        PanelManager();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetFood()
     {
-        
+        lowercaseName = name1;
+        uppercaseName = name2;
+        ChangeCamera();
     }
+
 }
