@@ -24,16 +24,20 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void PanelManager()
+
+    public void LastSelectedFood()
     {
         lastSelectedFoodID = currentFoodID;
-        currentFoodID = chosenFoodID;
+    }
+
+    public void PanelManager()
+    {
 
         if (lastSelectedFoodID != 0)
         {
             panel[lastSelectedFoodID - 1].SetActive(false);
         }
-        Debug.Log(currentFoodID);
-        panel[chosenFoodID - 1].SetActive(true);
+
+        panel[currentFoodID - 1].SetActive(true);
     }
 }

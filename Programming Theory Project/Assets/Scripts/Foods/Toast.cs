@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Toast : Food
+
 {
     public int foodID = 2;
     string name1 = "toast";
@@ -10,14 +11,14 @@ public class Toast : Food
 
     private void OnMouseDown()
     {
-        chosenFoodID = foodID;
+        currentFoodID = foodID;
         PanelManager();
     }
 
     public void SetFood()
     {
-        lowercaseName = name1;
-        uppercaseName = name2;
+        gameManagerScript.lowercaseName = name1;
+        gameManagerScript.uppercaseName = name2;
         ChangeCamera();
     }
 

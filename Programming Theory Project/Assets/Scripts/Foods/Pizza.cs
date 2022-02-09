@@ -11,14 +11,15 @@ public class Pizza : Food
 
     private void OnMouseDown()
     {
-        chosenFoodID = foodID;
+        currentFoodID = foodID;
         PanelManager();
     }
 
     public void SetFood()
     {
-        lowercaseName = name1;
-        uppercaseName = name2;
+        Debug.Log("OK");
+        gameManagerScript.lowercaseName = name1;
+        gameManagerScript.uppercaseName = name2;
         ChangeCamera();
     }
 

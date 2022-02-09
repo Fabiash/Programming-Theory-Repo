@@ -11,7 +11,7 @@ public class Food : MonoBehaviour
     public string lowercaseName;
     public GameObject gameManager;
     public GameObject[] panel;
-    private GameManager gameManagerScript; 
+    public GameManager gameManagerScript; 
     public GameObject mainCamera;
 
     // Start is called before the first frame update
@@ -28,12 +28,17 @@ public class Food : MonoBehaviour
 
     public void PanelManager()
     {
+        gameManagerScript.LastSelectedFood();
+
+        gameManagerScript.currentFoodID = currentFoodID;
 
         gameManagerScript.PanelManager();
     }
 
     public void ChangeCamera()
     {
+        
+        panel[currentFoodID - 1].SetActive(false);
         mainCamera.transform.position= new Vector3(-1.98000002f, 35f, 4.5999999f);
     }
 }
