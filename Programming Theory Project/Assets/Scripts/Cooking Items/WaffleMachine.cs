@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaffleMachine : MonoBehaviour
+public class WaffleMachine : CookingItem
 {
-    // Start is called before the first frame update
-    void Start()
+    public int itemID = 3;
+    string name1 = "waffle machine";
+
+    private void OnMouseDown()
     {
-        
+        currentItemID = itemID;
+        PanelManager();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetItem()
     {
-        
+        gameManagerScript.itemName = name1;
+        CookFood();
     }
 }
+

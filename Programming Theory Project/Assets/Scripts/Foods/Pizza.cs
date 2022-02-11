@@ -7,7 +7,6 @@ public class Pizza : Food
 {
     public int foodID = 1;
     string name1 = "pizza";
-    string name2 = "Pizza";
 
     private void OnMouseDown()
     {
@@ -17,10 +16,8 @@ public class Pizza : Food
 
     public void SetFood()
     {
-        Debug.Log("OK");
-        gameManagerScript.lowercaseName = name1;
-        gameManagerScript.uppercaseName = name2;
-        ChangeCamera();
+        gameManagerScript.foodName = name1;
+        gameManagerScript.ChangeCamera();
     }
 
 }
