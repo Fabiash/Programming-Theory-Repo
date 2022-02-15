@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/TMI - Kitchen/Test Scene.unity
+    path: Assets/Scenes/Main.unity
     guid: 2e15a2b9b12f4e0408a3dfa62aa13ad0
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: e03bd70e9d89b924f960a2964b0ae63e
   m_configObjects: {}
