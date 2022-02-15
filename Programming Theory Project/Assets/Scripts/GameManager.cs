@@ -10,31 +10,25 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
-    public int lastSelectedFoodID;
+    private int lastSelectedFoodID;
     public int currentFoodID;
-    public int chosenFoodID;
-    public string foodName;
-    public GameObject[] foodPanel;
-    public GameObject mainCamera;
-    public Text textToChange;
-    public GameObject cookingStatus;
+
+    [SerializeField] private GameObject[] foodPanel;
+
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private Text textToChange;
+
+    private int lastSelectedItemID;
     public int currentItemID;
-    public int lastSelectedItemID;
-    public GameObject[] itemPanel;
-    public string itemName;
+
+    [SerializeField] private GameObject[] itemPanel;
+
+    [SerializeField] private GameObject cookingStatus;
     public bool foodCooked;
-    public GameObject quitRestart;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] private GameObject quitRestart;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public string foodName;
+    public string itemName;
 
     public void LastSelectedFood()
     {
