@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] itemPanel;
     public string itemName;
     public bool foodCooked;
+    public GameObject quitRestart;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,11 +87,26 @@ public class GameManager : MonoBehaviour
         cookingStatus.SetActive(true);
         foodCooked = true;
         CloseItemPanel();
+        quitRestart.SetActive(true);
     }
 
     public void CookError()
     {
         cookingStatus.GetComponent<Text>().text = "<color=red>You can't cook a " + foodName + " in the " + itemName +  "</color>";
         cookingStatus.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+#if UNITY_EDITOR
+        EditorApplication.ExitPlaymode();
+#else
+        Application.Quit();
+#endif
     }
 }

@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/TMI - Kitchen/Test Scene.unity
+    guid: 2e15a2b9b12f4e0408a3dfa62aa13ad0
   m_configObjects: {}
