@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] itemPanel;
 
     [SerializeField] private GameObject cookingStatus;
-    public bool foodCooked;
+    // ENCAPSULATION
+    public bool foodCooked { get; private set; }
     [SerializeField] private GameObject quitRestart;
 
     public string foodName;
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()

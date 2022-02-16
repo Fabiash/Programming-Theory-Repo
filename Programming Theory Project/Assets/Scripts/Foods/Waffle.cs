@@ -5,11 +5,13 @@ using UnityEngine;
 public class Waffle : Food
 
 {
-    public int foodID = 3;
-    string name1 = "waffle";
+    // POLYMORPHISM
+    [SerializeField] private int foodID = 3;
+    [SerializeField] private string name1 = "waffle";
 
     private void OnMouseDown()
     {
+        // INHERITANCE
         currentFoodID = foodID;
         PanelManager();
     }

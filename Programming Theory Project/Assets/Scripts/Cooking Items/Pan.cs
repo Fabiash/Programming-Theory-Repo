@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Pan : CookingItem
 {
-    public int itemID = 4;
-    string name1 = "pan";
+    // POLYMORPHISM
+    [SerializeField] private int itemID = 4;
+    [SerializeField] private string name1 = "pan";
 
     private void OnMouseDown()
     {
+        // INHERITANCE
         currentItemID = itemID;
         PanelManager();
     }
@@ -16,6 +18,7 @@ public class Pan : CookingItem
     public void SetItem()
     {
         gameManagerScript.itemName = name1;
+        // INHERITANCE
         CookFood();
     }
 }

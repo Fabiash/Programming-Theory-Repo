@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CookingItem : MonoBehaviour
 {
-    public GameObject gameManager;
-    public GameManager gameManagerScript;
+    [SerializeField] private GameObject gameManager;
+    // ENCAPSULATION
+    public GameManager gameManagerScript { get; private set; }
 
-    public int currentItemID;
+    public int currentItemID { get; protected set; }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class CookingItem : MonoBehaviour
 
     public void PanelManager()
     {
+        // ABSTRACTION
         if (!gameManagerScript.foodCooked)
         {
             gameManagerScript.LastSelectedItem();
@@ -29,6 +31,7 @@ public class CookingItem : MonoBehaviour
 
     public void CookFood()
     {
+        // ABSTRACTION
         if (currentItemID == gameManagerScript.currentFoodID)
         {
             gameManagerScript.CookOK();

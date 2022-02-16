@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public int lastSelectedFoodID;
-    public int currentFoodID;
-    public int chosenFoodID;
-    public GameObject gameManager;
-    public GameManager gameManagerScript; 
+    [SerializeField] private GameObject gameManager;
+    // ENCAPSULATION
+    public GameManager gameManagerScript { get; private set; }
+
+    public int currentFoodID { get; protected set; }
 
     // Start is called before the first frame update
     void Start()
@@ -16,14 +16,9 @@ public class Food : MonoBehaviour
         gameManagerScript = gameManager.GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PanelManager()
     {
+        // ABSTRACTION
         gameManagerScript.LastSelectedFood();
 
         gameManagerScript.currentFoodID = currentFoodID;
